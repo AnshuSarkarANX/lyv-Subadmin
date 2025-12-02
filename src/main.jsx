@@ -3,7 +3,10 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router";
-import Inventory from "./Pages/Inventory.jsx";
+import Inventory from "./Pages/inventory/Inventory.jsx";
+import AddQuantityPage from "./Pages/Inventory/AddQuantityPage.jsx";
+import ReportDamage from "./Pages/Inventory/ReportDamage.jsx";
+import Homepage from "./Pages/Homepage.jsx";
 
 const ProtectedRoute = ({ children }) => {
   {
@@ -53,10 +56,15 @@ const appRoute = createBrowserRouter([
         <App />
       </ProtectedRoute>
     ),
-    children: [{
-      path:"/inventory",
-      element:<Inventory/>
-    }],
+    children: [
+      {
+        path: "/inventory",
+        element: <Inventory />,
+      },
+      { path: "/inventory/add-quantity", element: <AddQuantityPage /> },
+      { path: "/inventory/report-damage", element: <ReportDamage /> },
+      { path: "/home", element: <Homepage /> },
+    ],
   },
 ]);
 createRoot(document.getElementById("root")).render(

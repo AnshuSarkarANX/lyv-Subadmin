@@ -6,6 +6,8 @@
   min-height: 100vh;
   padding: 0px;
   width: 100%;
+  background: var(--bg);
+  font-family: var(--font-heading);
   --primary: #984AD9;
     --secondary: #EEDBFF;
     --light-purple: #F7EDFF;
@@ -13,7 +15,7 @@
     --bg: #FAFAFA;
     --white: #FFFFFF;
     --text: #1F1F1F;
-    --text2: #6B6B6B;
+    --text2: #808080;
 
 }
 
@@ -32,6 +34,15 @@
   --font-body: "Nunito", system-ui, -apple-system, sans-serif;
 }
 
+.gradient-border {
+  border-image: linear-gradient(120deg, #5F6EC9 0%, #B2BDFF 100%) 1;
+}
+.gradient-text {
+  background: linear-gradient(120deg, #5F6EC9 0%, #B2BDFF 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
 .side-menu-overlay {
   position: absolute;
   inset: 0;

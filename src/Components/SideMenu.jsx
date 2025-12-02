@@ -40,12 +40,18 @@ const SideMenu = ({ menuState, setMenuState }) => {
     return children;
   };
 
-  const smapleMenuData = [{
-    heading_english: "Inventory",
-    totalItems:540,
-    link:"/inventory"
-    
-  }]
+  const smapleMenuData = [
+    {
+      heading_english: "Inventory",
+      totalItems: 540,
+      link: "/inventory",
+    },
+    {
+      heading_english: "Home",
+      totalItems: 540,
+      link: "/home",
+    },
+  ];
 
   return (
     <div

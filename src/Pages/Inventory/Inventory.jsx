@@ -1,9 +1,11 @@
 import { FaBoxes } from "react-icons/fa";
-import InventoryCard from "../Components/InventoryCard";
-import SearchSortFilter from "../Components/SearchSortFilter"
+import InventoryCard from "../../Components/InventoryCard";
+import SearchSortFilter from "../../Components/SearchSortFilter"
 import { BiEdit } from "react-icons/bi";
+import { useNavigate } from "react-router";
 
 const Inventory = () => {
+  const navigate = useNavigate();
     const inventoryItem = [
       {
         item: "Bedding",
@@ -17,20 +19,20 @@ const Inventory = () => {
         actions: [
           {
             icon: <BiEdit className="text-[#AEAAB1] w-[25px] h-[25px]" />,
-            name: "Edit",
-            onClick: () => {},
+            name: "Add Quantity",
+            onClick: () => navigate("/inventory/add-quantity", {state: {quantity: 100}}),
           },
           {
             icon: <BiEdit className="text-[#AEAAB1] w-[25px] h-[25px]" />,
-            name: "Delete",
-            onClick: () => {},
+            name: "Report Damage",
+            onClick: () => navigate("/inventory/report-damage"),
           },
         ],
       },
     ];
   return (
     <div>
-      <SearchSortFilter />
+      <SearchSortFilter search={true} sort={true} filter={true} heading="Inventory" />
       <div className="space-y-[20px] mt-[20px]">
         {inventoryItem.map((item) => (
           <InventoryCard key={item.item} Item={item} />
