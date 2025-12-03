@@ -7,6 +7,12 @@ import Inventory from "./Pages/inventory/Inventory.jsx";
 import AddQuantityPage from "./Pages/Inventory/AddQuantityPage.jsx";
 import ReportDamage from "./Pages/Inventory/ReportDamage.jsx";
 import Homepage from "./Pages/Homepage.jsx";
+import PendingOrders from "./Pages/Inventory/PendingOrders.jsx";
+import InProgressOrders from "./Pages/Inventory/InProgressOrders.jsx";
+import OutForDeliveryOrders from "./Pages/Inventory/OutForDeliveryOrders.jsx";
+import DeliveredOrders from "./Pages/Inventory/DeliveredOrders.jsx";
+import ReadyForPickupOrders from "./Pages/Inventory/ReadyForPickupOrders.jsx";
+import PickedupOrders from "./Pages/Inventory/PickedupOrders.jsx";
 
 const ProtectedRoute = ({ children }) => {
   {
@@ -64,6 +70,12 @@ const appRoute = createBrowserRouter([
       { path: "/inventory/add-quantity", element: <AddQuantityPage /> },
       { path: "/inventory/report-damage", element: <ReportDamage /> },
       { path: "/home", element: <Homepage /> },
+      { path: "/pending-orders", element: <PendingOrders /> },
+      { path: "/in-progress-orders", element: <InProgressOrders /> },
+      { path: "/out-for-delivery-orders", element: <OutForDeliveryOrders /> },
+      { path: "/delivered-orders", element: <DeliveredOrders /> },
+      { path: "/ready-for-pickup-orders", element: <ReadyForPickupOrders /> },
+      { path: "/picked-up-orders", element: <PickedupOrders /> },
     ],
   },
 ]);

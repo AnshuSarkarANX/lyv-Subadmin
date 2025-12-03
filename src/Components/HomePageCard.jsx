@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { IoIosArrowUp } from "react-icons/io";
 import { FaRegHourglass } from "react-icons/fa6";
+import { useNavigate } from "react-router";
 
 const HomePageCard = ({ item , defaultOpen = true}) => {
   const [isOpen, setIsOpen] = useState(defaultOpen);
+  const navigate = useNavigate();
 
   const toggleOpen = (e) => {
     // Prevent inner ExpandableSection clicks from affecting parent
@@ -32,7 +34,11 @@ const HomePageCard = ({ item , defaultOpen = true}) => {
 
       {isOpen && (
         <div className="grid grid-cols-2 gap-[12px] mt-[15px]">
-          <div className="p-[15px] border border-[#1F1F1F1A] rounded-[10px] flex gap-[10px] h-[74px]">
+          {/*Pending Orders*/}
+          <div
+            className="p-[15px] border border-[#1F1F1F1A] rounded-[10px] flex gap-[10px] h-[74px]"
+            onClick={() => navigate("/pending-orders")}
+          >
             <div className="border border-[#1F1F1F1A] px-[13.5px] py-[11px] rounded-[5px] flex items-center justify-center">
               <FaRegHourglass className="h-[20px] w-[15px] text-[#808080BF]" />
             </div>
@@ -41,7 +47,11 @@ const HomePageCard = ({ item , defaultOpen = true}) => {
               <p className="H-20 font-bold text-[#FF384A]">{item.pending}</p>
             </div>
           </div>
-          <div className="p-[15px] border border-[#1F1F1F1A] rounded-[10px] flex gap-[10px] h-[74px]">
+          {/*In Progress Orders*/}
+          <div
+            className="p-[15px] border border-[#1F1F1F1A] rounded-[10px] flex gap-[10px] h-[74px]"
+            onClick={() => navigate("/in-progress-orders")}
+          >
             <div className="border border-[#1F1F1F1A] px-[13.5px] py-[11px] rounded-[5px] flex items-center justify-center">
               <FaRegHourglass className="h-[20px] w-[15px] text-[#808080BF]" />
             </div>
@@ -50,7 +60,11 @@ const HomePageCard = ({ item , defaultOpen = true}) => {
               <p className="H-20 font-bold text-[#E58D00]">{item.inProgress}</p>
             </div>
           </div>
-          <div className="p-[15px] border border-[#1F1F1F1A] rounded-[10px] flex gap-[10px] h-[74px]">
+          {/*Out for Delivery Orders*/}
+          <div
+            className="p-[15px] border border-[#1F1F1F1A] rounded-[10px] flex gap-[10px] h-[74px]"
+            onClick={() => navigate("/out-for-delivery-orders")}
+          >
             <div className="border border-[#1F1F1F1A] px-[13.5px] py-[11px] rounded-[5px] flex items-center justify-center">
               <FaRegHourglass className="h-[20px] w-[15px] text-[#808080BF]" />
             </div>
@@ -61,7 +75,8 @@ const HomePageCard = ({ item , defaultOpen = true}) => {
               </p>
             </div>
           </div>
-          <div className="p-[15px] border border-[#1F1F1F1A] rounded-[10px] flex gap-[10px] h-[74px]">
+          {/*Delivered Orders*/}
+          <div className="p-[15px] border border-[#1F1F1F1A] rounded-[10px] flex gap-[10px] h-[74px]" onClick={() => navigate("/delivered-orders")}>
             <div className="border border-[#1F1F1F1A] px-[13.5px] py-[11px] rounded-[5px] flex items-center justify-center">
               <FaRegHourglass className="h-[20px] w-[15px] text-[#808080BF]" />
             </div>

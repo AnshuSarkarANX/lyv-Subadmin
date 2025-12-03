@@ -7,7 +7,7 @@ import HomePageCard from "../Components/HomePageCard"
 const sampleItems = [
   {
     icon: <IoIosArrowUp className="size-[20px] text-[#808080BF]" />,
-    label: "Total Orders",
+    label: "Delivery",
     totalItems: "540",
     pending: "120",
     inProgress: "300",
@@ -18,7 +18,7 @@ const sampleItems = [
   },
   {
     icon: <FaRegHourglass className="size-[20px] text-[#808080BF]" />,
-    label: "Pending Orders",
+    label: "Pick-up",
     totalItems: "120",
     pending: "60",
     inProgress: "300",

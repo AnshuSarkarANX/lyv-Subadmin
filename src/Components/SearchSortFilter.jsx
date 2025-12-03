@@ -1,16 +1,34 @@
 import { FaBoxes } from "react-icons/fa";
 import { IoSearchOutline } from "react-icons/io5";
-import { useLocation } from "react-router";
+import { IoIosArrowUp } from "react-icons/io";
+import { useLocation, useNavigate } from "react-router";
 
-const SearchSortFilter = ({heading,search= false,sort= false,filter= false,totalItems}) => {
-    const location = useLocation();
-    const currentSegment = location.pathname.split("/")[1];
+const SearchSortFilter = ({
+  heading,
+  search = false,
+  sort = false,
+  filter = false,
+  totalItems,
+  back = false,
+}) => {
+  const location = useLocation();
+  const currentSegment = location.pathname.split("/")[1];
+  const navigate = useNavigate();
   return (
     <div className="space-y-[20px]">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <FaBoxes className="text-[#5F6EC9]" />
-          <span className="font-semibold H-18 leading-[13px] text-[#808080]">
+          {back ? (
+            <div
+              onClick={() => navigate(-1)}
+              className="h-[30px] w-[30px]  rounded-[5px] border-[0.5px] border-[#1F1F1F1A] flex items-center justify-center bg-white"
+            >
+              <IoIosArrowUp className="text-[#5F6EC9] rotate-270" />
+            </div>
+          ) : (
+            <FaBoxes className="text-[#5F6EC9]" />
+          )}
+          <span className="font-semibold H-18 leading-[13px] ">
             {heading || currentSegment}
           </span>
           {totalItems && (

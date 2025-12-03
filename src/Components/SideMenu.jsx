@@ -42,15 +42,28 @@ const SideMenu = ({ menuState, setMenuState }) => {
 
   const smapleMenuData = [
     {
-      heading_english: "Inventory",
+      heading: "Inventory",
       totalItems: 540,
       link: "/inventory",
     },
     {
-      heading_english: "Home",
+      heading: "Home",
       totalItems: 540,
       link: "/home",
     },
+    { heading: "Pending Orders", totalItems: 120, link: "/pending-orders" },
+    {
+      heading: "Out for Delivery Orders",
+      totalItems: 120,
+      link: "/out-for-delivery-orders",
+    },
+    { heading: "Delivered Orders", totalItems: 120, link: "/delivered-orders" },
+    {
+      heading: "Ready for Pickup Orders",
+      totalItems: 120,
+      link: "/ready-for-pickup-orders",
+    },
+    { heading: "Picked-up Orders", totalItems: 120, link: "/picked-up-orders" },
   ];
 
   return (
@@ -98,7 +111,7 @@ const SideMenu = ({ menuState, setMenuState }) => {
             <div className="flex flex-col gap-[40px] pl-8 px-5 overflow-y-auto h-content">
               {smapleMenuData.map((item) => (
                 <ActiveLink
-                  key={item.heading_english}
+                  key={item.heading}
                   to={item.link}
                   onClick={() => setMenuState(false)}
                 >
@@ -106,7 +119,7 @@ const SideMenu = ({ menuState, setMenuState }) => {
                     <div className="flex items-center gap-2">
                       <FaBoxes className="text-[#808080]" />
                       <span className="font-semibold H-18 leading-[13px] text-[#808080]">
-                        {item.heading_english}
+                        {item.heading}
                       </span>
                     </div>
 
@@ -118,8 +131,6 @@ const SideMenu = ({ menuState, setMenuState }) => {
               ))}
             </div>
           </Wrapper>
-
-         
         </div>
       </div>
     </div>
